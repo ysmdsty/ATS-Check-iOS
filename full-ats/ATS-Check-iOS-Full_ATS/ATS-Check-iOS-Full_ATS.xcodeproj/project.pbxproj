@@ -12,7 +12,23 @@
 		EA9C8A681D69B5F9004E334A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9C8A661D69B5F9004E334A /* Main.storyboard */; };
 		EA9C8A6A1D69B5F9004E334A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA9C8A691D69B5F9004E334A /* Assets.xcassets */; };
 		EA9C8A6D1D69B5F9004E334A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9C8A6B1D69B5F9004E334A /* LaunchScreen.storyboard */; };
+		EA9C8ADF1D6A082B004E334A /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9C8ADE1D6A082B004E334A /* Bond.framework */; };
+		EA9C8AE01D6A082B004E334A /* Bond.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA9C8ADE1D6A082B004E334A /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA9C8AE11D6A082B004E334A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EA9C8AE01D6A082B004E334A /* Bond.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EA9C8A5F1D69B5F9004E334A /* ATS-Check-iOS-Full_ATS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ATS-Check-iOS-Full_ATS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +38,7 @@
 		EA9C8A691D69B5F9004E334A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA9C8A6C1D69B5F9004E334A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA9C8A6E1D69B5F9004E334A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA9C8ADE1D6A082B004E334A /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Frameworks/github/SwiftBond/Bond/v4.3.1/Bond.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA9C8ADF1D6A082B004E334A /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +56,7 @@
 		EA9C8A561D69B5F9004E334A = {
 			isa = PBXGroup;
 			children = (
+				EA9C8ADE1D6A082B004E334A /* Bond.framework */,
 				EA9C8A611D69B5F9004E334A /* ATS-Check-iOS-Full_ATS */,
 				EA9C8A601D69B5F9004E334A /* Products */,
 			);
@@ -74,6 +93,7 @@
 				EA9C8A5B1D69B5F9004E334A /* Sources */,
 				EA9C8A5C1D69B5F9004E334A /* Frameworks */,
 				EA9C8A5D1D69B5F9004E334A /* Resources */,
+				EA9C8AE11D6A082B004E334A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,6 +269,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/github/SwiftBond/Bond/v4.3.1",
+				);
 				INFOPLIST_FILE = "ATS-Check-iOS-Full_ATS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.ysmdsty.ATS-Check-iOS-Full-ATS";
@@ -260,6 +284,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/github/SwiftBond/Bond/v4.3.1",
+				);
 				INFOPLIST_FILE = "ATS-Check-iOS-Full_ATS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.ysmdsty.ATS-Check-iOS-Full-ATS";
@@ -286,6 +314,7 @@
 				EA9C8A731D69B5F9004E334A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
