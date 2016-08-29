@@ -8,12 +8,14 @@
 
 import UIKit
 import Bond
+import SegueContext
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var requestButton: UIButton!
+    @IBOutlet weak var webviewButton: UIButton!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var resultLabel: UILabel!
@@ -44,6 +46,14 @@ class ViewController: UIViewController {
         }
         resultText.deliverOn(.Main).bindTo(textView.bnd_text)
         resultLabelText.deliverOn(.Main).bindTo(resultLabel.bnd_text)
+
+        webviewButton.bnd_tap.throttle(0.1, queue: .Main).observeNew { [unowned self] in
+            let urlString: String = self.dataSource[self.pickerView.selectedRowInComponent(0)]
+
+            let identifier = "WebViewListViewController"
+            self.pushViewControllerWithStoryboardName(identifier, identifier: identifier,
+                bundle: nil, animated: true, context: urlString, callback: nil)
+        }
     }
 
     func clear() {
