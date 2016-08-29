@@ -11,6 +11,8 @@
 		44B565541D73F39B00A3C71B /* SegueContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B565531D73F39B00A3C71B /* SegueContext.framework */; };
 		44B565551D73F39B00A3C71B /* SegueContext.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44B565531D73F39B00A3C71B /* SegueContext.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		44B5655D1D740AFA00A3C71B /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B5655C1D740AFA00A3C71B /* SafariServices.framework */; };
+		44B5655F1D740DD800A3C71B /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B5655E1D740DD800A3C71B /* PureLayout.framework */; };
+		44B565601D740DD800A3C71B /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44B5655E1D740DD800A3C71B /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA9C8A631D69B5F9004E334A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C8A621D69B5F9004E334A /* AppDelegate.swift */; };
 		EA9C8A651D69B5F9004E334A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C8A641D69B5F9004E334A /* ViewController.swift */; };
 		EA9C8A681D69B5F9004E334A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9C8A661D69B5F9004E334A /* Main.storyboard */; };
@@ -28,6 +30,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				44B565551D73F39B00A3C71B /* SegueContext.framework in Embed Frameworks */,
+				44B565601D740DD800A3C71B /* PureLayout.framework in Embed Frameworks */,
 				EA9C8AE01D6A082B004E334A /* Bond.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -39,6 +42,7 @@
 		44A9868C1D6C7036003C593C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		44B565531D73F39B00A3C71B /* SegueContext.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SegueContext.framework; path = Frameworks/github/tokorom/SegueContext/1.0.0/SegueContext.framework; sourceTree = "<group>"; };
 		44B5655C1D740AFA00A3C71B /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		44B5655E1D740DD800A3C71B /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Frameworks/github/PureLayout/PureLayout/v3.0.2/PureLayout.framework; sourceTree = "<group>"; };
 		EA9C8A5F1D69B5F9004E334A /* ATS-Check-iOS-Full_ATS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ATS-Check-iOS-Full_ATS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9C8A621D69B5F9004E334A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA9C8A641D69B5F9004E334A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 			files = (
 				44B5655D1D740AFA00A3C71B /* SafariServices.framework in Frameworks */,
 				44B565541D73F39B00A3C71B /* SegueContext.framework in Frameworks */,
+				44B5655F1D740DD800A3C71B /* PureLayout.framework in Frameworks */,
 				EA9C8ADF1D6A082B004E334A /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +71,7 @@
 		EA9C8A561D69B5F9004E334A = {
 			isa = PBXGroup;
 			children = (
+				44B5655E1D740DD800A3C71B /* PureLayout.framework */,
 				44B5655C1D740AFA00A3C71B /* SafariServices.framework */,
 				44B565531D73F39B00A3C71B /* SegueContext.framework */,
 				EA9C8ADE1D6A082B004E334A /* Bond.framework */,
@@ -288,6 +294,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/github/SwiftBond/Bond/v4.3.1",
 					"$(PROJECT_DIR)/Frameworks/github/tokorom/SegueContext/1.0.0",
+					"$(PROJECT_DIR)/Frameworks/github/PureLayout/PureLayout/v3.0.2",
 				);
 				INFOPLIST_FILE = "ATS-Check-iOS-Full_ATS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -304,6 +311,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/github/SwiftBond/Bond/v4.3.1",
 					"$(PROJECT_DIR)/Frameworks/github/tokorom/SegueContext/1.0.0",
+					"$(PROJECT_DIR)/Frameworks/github/PureLayout/PureLayout/v3.0.2",
 				);
 				INFOPLIST_FILE = "ATS-Check-iOS-Full_ATS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
