@@ -52,8 +52,12 @@ class WebViewListViewController: UITableViewController {
         case .WKWebview:
             self.performSegueWithIdentifier("Push_\(data.rawValue)", sender: nil, context: urlString, callback: nil)
         case .SafariView:
-            let controller = TrySafariViewController(URL: NSURL(string: urlString)!, entersReaderIfAvailable: false)
-            self.navigationController?.pushViewController(controller, animated: true)
+            if #available(iOS 9.0, *) {
+                let controller = TrySafariViewController(URL: NSURL(string: urlString)!, entersReaderIfAvailable: false)
+                self.navigationController?.pushViewController(controller, animated: true)
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 

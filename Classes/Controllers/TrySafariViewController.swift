@@ -9,6 +9,7 @@
 import UIKit
 import SafariServices
 
+@available(iOS 9.0, *)
 class TrySafariViewController: SFSafariViewController, SFSafariViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
