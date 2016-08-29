@@ -23,8 +23,12 @@
  * Rivest-Shamir-Adleman (RSA) key with a length of at least 2048 bits
  * Elliptic-Curve Cryptography (ECC) key with a size of at least 256 bits
 
+### 確認方法 1
 
-### 確認方法１
+* nscurl  --ats-diagnostics http://example.com
+
+
+### 確認方法 2
 
 * https://github.com/jvehent/cipherscan
 
@@ -40,5 +44,76 @@ ECDHE-RSA-CHACHA20-POLY1305  TLSv1.2    ECDH,P-256,256bits  prime256v1
 * pfsが"ECDH,P-256,256bits"でforward securityを満たす
 * curvesがprime256v1でATS最後の条件を満たす(Elliptic-Curve Cryptography)
 
-### 確認方法2
+### 確認方法 3
 * サンプルプロジェクトで実際にリクエスト
+
+
+## 挙動詳細
+
+### iOS8
+
+* ATS未対応サイトもWebviewで読み込める
+* ATS未対応サイトもNSURLSessionで読める
+
+### iOS9/10
+
+#### ATS完全有効化の場合
+
+* iOS9 /iOS10
+
+|種別|UIWebView | WkWebView | SFSafariViewController|
+|-----|-----|-----|-----|
+|ATS対応サイト|◯|◯|◯|
+|ATS対応サイト<br />表示画像の取得先はATS未対応|☓<br />画像が?になる|☓<br />画像が?になる|◯|
+|ATS未対応サイト|読み込めない|読み込めない|◯|
+
+ATS対応サイトならNSURLSessionで読める
+
+#### ATS一部有効化の場合 (Allow Arbitrary Loads in Web Content)
+
+* iOS10
+
+|種別|UIWebView | WkWebView | SFSafariViewController|
+|-----|-----|-----|-----|
+|ATS対応サイト|◯|◯|◯|
+|ATS対応サイト<br />表示画像の取得先はATS未対応|◯|◯|◯|
+|ATS未対応サイト|読み込めない|読み込めない|◯|
+
+ATS対応サイトならNSURLSessionで読める
+
+* iOS9
+
+|種別|UIWebView | WkWebView | SFSafariViewController|
+|-----|-----|-----|-----|
+|ATS対応サイト|◯|◯|◯|
+|ATS対応サイト<br />表示画像の取得先はATS未対応|☓<br />画像が?になる|☓<br />画像が?になる|◯|
+|ATS未対応サイト|読み込めない|読み込めない|◯|
+
+ATS対応サイトならNSURLSessionで読める
+
+#### ATS無効化の場合 (Allow Arbitrary Loads)
+
+* iOS10 / iOS9
+ * ATS未対応サイトもWebviewで読み込める
+ * ATS未対応サイトもNSURLSessionで読める
+
+#### ATS一部有効化の場合 (Allow Arbitrary Loads in Web Content) & (Allow Arbitrary Loads)
+
+* iOS10
+ * Allow Arbitrary Loads in Web Contentのみの時と同じ
+* iOS9
+　* Allow Arbitrary Loadsのみの時と同じ
+
+#### ATS一部有効化の場合 (下記のException Domainsを指定)
+
+* Exception Domains
+ * NSExceptionRequiresForwardSecrecy = NO
+ * NSExceptionAllowsInsecureHTTPLoads = YES
+
+個々に(Allow Arbitrary Loads)を適用しているような扱いになる。
+ただし、ページ内でhttpリクエストが行われる場合(Allow Arbitrary Loads in Web Content)も指定していないと
+一部画像が?になる
+
+
+
+
