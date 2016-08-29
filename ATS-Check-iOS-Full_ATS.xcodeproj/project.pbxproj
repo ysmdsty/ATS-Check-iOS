@@ -10,6 +10,7 @@
 		44A9868D1D6C7036003C593C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9868C1D6C7036003C593C /* Constants.swift */; };
 		44B565541D73F39B00A3C71B /* SegueContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B565531D73F39B00A3C71B /* SegueContext.framework */; };
 		44B565551D73F39B00A3C71B /* SegueContext.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44B565531D73F39B00A3C71B /* SegueContext.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		44B5655D1D740AFA00A3C71B /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B5655C1D740AFA00A3C71B /* SafariServices.framework */; };
 		EA9C8A631D69B5F9004E334A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C8A621D69B5F9004E334A /* AppDelegate.swift */; };
 		EA9C8A651D69B5F9004E334A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C8A641D69B5F9004E334A /* ViewController.swift */; };
 		EA9C8A681D69B5F9004E334A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9C8A661D69B5F9004E334A /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		44A9868C1D6C7036003C593C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		44B565531D73F39B00A3C71B /* SegueContext.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SegueContext.framework; path = Frameworks/github/tokorom/SegueContext/1.0.0/SegueContext.framework; sourceTree = "<group>"; };
+		44B5655C1D740AFA00A3C71B /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		EA9C8A5F1D69B5F9004E334A /* ATS-Check-iOS-Full_ATS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ATS-Check-iOS-Full_ATS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9C8A621D69B5F9004E334A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA9C8A641D69B5F9004E334A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B5655D1D740AFA00A3C71B /* SafariServices.framework in Frameworks */,
 				44B565541D73F39B00A3C71B /* SegueContext.framework in Frameworks */,
 				EA9C8ADF1D6A082B004E334A /* Bond.framework in Frameworks */,
 			);
@@ -63,6 +66,7 @@
 		EA9C8A561D69B5F9004E334A = {
 			isa = PBXGroup;
 			children = (
+				44B5655C1D740AFA00A3C71B /* SafariServices.framework */,
 				44B565531D73F39B00A3C71B /* SegueContext.framework */,
 				EA9C8ADE1D6A082B004E334A /* Bond.framework */,
 				EA9C8A611D69B5F9004E334A /* ATS-Check-iOS-Full_ATS */,
@@ -166,6 +170,7 @@
 			files = (
 				EA9C8A651D69B5F9004E334A /* ViewController.swift in Sources */,
 				EA9C8A631D69B5F9004E334A /* AppDelegate.swift in Sources */,
+				44B565501D73F22E00A3C71B /* WebViewListViewController.swift in Sources */,
 				44A9868D1D6C7036003C593C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
