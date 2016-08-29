@@ -1,0 +1,10 @@
+framework module SegueContext {
+  umbrella header "SegueContext.h"
+
+  export *
+  module * { export * }
+}
+
+module SegueContext.Swift {
+    header "SegueContext-Swift.h"
+}
