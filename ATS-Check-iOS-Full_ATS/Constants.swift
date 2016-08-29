@@ -14,7 +14,6 @@ struct Constants {
             "https://httpbin.org/get",
             "https://httpbin.org/post",
             "https://httpbin.org/",
-            "https://corp.rakuten.co.jp/",
         ]
     }
 }
