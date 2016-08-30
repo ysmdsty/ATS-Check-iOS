@@ -102,7 +102,7 @@ ATS対応サイトならNSURLSessionで読める
 * iOS10
  * Allow Arbitrary Loads in Web Contentのみの時と同じ
 * iOS9
-　* Allow Arbitrary Loadsのみの時と同じ
+ * Allow Arbitrary Loadsのみの時と同じ
 
 #### ATS一部有効化の場合 (下記のException Domainsを指定)
 
@@ -110,10 +110,17 @@ ATS対応サイトならNSURLSessionで読める
  * NSExceptionRequiresForwardSecrecy = NO
  * NSExceptionAllowsInsecureHTTPLoads = YES
 
-個々に(Allow Arbitrary Loads)を適用しているような扱いになる。
-ただし、ページ内でhttpリクエストが行われる場合(Allow Arbitrary Loads in Web Content)も指定していないと
-一部画像が?になる
+ 個々に(Allow Arbitrary Loads)を適用しているような扱いになる。
+ ただし、読み込まれるページ内で読み込まれるリソースについては別途ドメインを指定(Exception Domains)していないと読み込まれない。
+ 画像なら?となる。
 
 
+#### Webviewでのhttpアクセスの検出
+
+proxyのログを見ると、ATSが有効の時httpリクエストは行われない。
+ただし、httpリンクのクリックはUIWebview/WKWebviewともに検出出来る。
 
 
+#### iOS9とiOS10の挙動の差異
+
+proxyのログを見ると、Response結果に生かされているわけではないが、Htmlコンテンツ内のhttpリクエスト部分も一度、httpsでリクエストされているように見える。
