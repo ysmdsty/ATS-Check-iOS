@@ -23,5 +23,13 @@ class TryUIWebViewController: UIViewController {
         }
         urlString = contextValue
         webview.loadRequest(NSURLRequest(URL: NSURL(string: urlString)!))
+        webview.delegate = self
+    }
+}
+
+extension TryUIWebViewController: UIWebViewDelegate {
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        NSLog("\(request.URL?.description)")
+        return true
     }
 }
