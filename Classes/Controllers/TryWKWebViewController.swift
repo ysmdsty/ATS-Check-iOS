@@ -32,5 +32,13 @@ class TryWKWebViewController: UIViewController {
         }
         urlString = contextValue
         webview.loadRequest(NSURLRequest(URL: NSURL(string: urlString)!))
+        webview.navigationDelegate = self
+    }
+}
+
+extension TryWKWebViewController: WKNavigationDelegate {
+    func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+        NSLog("\(navigationAction.request.URL?.description)")
+        decisionHandler(.Allow)
     }
 }
